@@ -4,9 +4,9 @@ export const SITE = {
   hindiTagline: 'सुरक्षा का वादा, आपका भरोसा!',
   person: 'Aryan Singh',
   role: 'Insurance Consultant & Director',
-  phones: ['+91 83997 29020', '+91 95066 88867'],
-  phoneLinks: ['+918399729020', '+919506688867'],
-  whatsapp: '918399729020',
+  phones: ['+91 82997 29020', '+91 95066 88867'],
+  phoneLinks: ['+918299729020', '+919506688867'],
+  whatsapp: '918299729020',
   email: 'info@aryaninsurance.com',
   addressLines: [
     'Office No. 1415, 14th Floor, Skyline Plaza-3',
