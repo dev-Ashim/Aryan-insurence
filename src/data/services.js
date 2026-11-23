@@ -1,0 +1,134 @@
+import { Car, HeartPulse, ShieldCheck, Store, Activity, Beef, Truck } from 'lucide-react';
+
+export const SERVICES = [
+  {
+    slug: 'motor-insurance',
+    num: '01',
+    title: 'Motor Insurance',
+    seo: 'Car & Motor Insurance Consultant in Lucknow',
+    icon: Car,
+    short: 'Protect your car or personal vehicle against unexpected accidents, theft and other covered risks.',
+    intro:
+      'Your vehicle is one of your most valuable possessions. The right motor policy helps protect you from the financial impact of accidents, theft and other covered risks, while keeping you compliant with legal requirements.',
+    items: [
+      'Comprehensive Car Insurance',
+      'Third-Party Insurance',
+      'Own Damage Insurance',
+      'Car Insurance Renewal',
+      'Cashless Garage Assistance',
+      'Personal Accident Cover (where applicable)',
+    ],
+  },
+  {
+    slug: 'health-insurance',
+    num: '02',
+    title: 'Health Insurance',
+    seo: 'Health Insurance Plans & Consultation',
+    icon: HeartPulse,
+    short: 'Secure your health and protect your savings against unexpected medical expenses.',
+    intro:
+      'Medical costs can arrive without warning. A suitable health insurance plan helps you focus on recovery instead of bills, and protects the savings you have worked hard to build.',
+    items: [
+      'Individual Health Insurance',
+      'Family Floater Plans',
+      'Senior Citizen Health Insurance',
+      'Critical Illness Insurance',
+      'Hospitalization Coverage',
+      'Cashless Hospitalization (as per policy terms)',
+    ],
+  },
+  {
+    slug: 'life-term-insurance',
+    num: '03',
+    title: 'Life & Term Insurance',
+    seo: 'Life & Term Insurance Consultant',
+    icon: ShieldCheck,
+    short: 'Protect your loved ones financially and help secure their future.',
+    intro:
+      "Life insurance is a promise to the people who depend on you. We help you understand term, savings and family protection options so your family's future stays secure, whatever happens.",
+    items: [
+      'Term Life Insurance',
+      'Individual Life Insurance',
+      'Family Protection Plans',
+      'Savings & Life Insurance Plans',
+      'Child Future Planning',
+      'Financial Security Planning',
+    ],
+  },
+  {
+    slug: 'shop-business-insurance',
+    num: '04',
+    title: 'Shop & Business Insurance',
+    seo: 'Shop & Business Insurance Services',
+    icon: Store,
+    short: 'Protect your premises, inventory, equipment and other eligible business assets.',
+    intro:
+      'A single fire, burglary or disaster can undo years of hard work. Business insurance helps protect your shop, office, stock and equipment so your business can keep going.',
+    items: [
+      'Shop Insurance',
+      'Fire & Special Perils Insurance',
+      'Burglary Insurance',
+      'Office Insurance',
+      'Stock & Inventory Protection',
+      'Commercial Property Insurance',
+    ],
+  },
+  {
+    slug: 'personal-accident-insurance',
+    num: '05',
+    title: 'Personal Accident Insurance',
+    seo: 'Personal Accident Insurance',
+    icon: Activity,
+    short: 'Be financially prepared for unforeseen accidents.',
+    intro:
+      'Accidents can affect your ability to earn. Personal accident cover provides financial support in case of accidental death or disability, helping your family stay financially steady.',
+    items: [
+      'Accidental Death Cover',
+      'Permanent Disability Cover',
+      'Partial Disability Cover',
+      'Temporary Disability Benefits (as per policy)',
+      'Accident-Related Medical Benefits (where covered)',
+    ],
+  },
+  {
+    slug: 'livestock-insurance',
+    num: '06',
+    title: 'Livestock Insurance',
+    seo: 'Cattle & Livestock Insurance',
+    icon: Beef,
+    short: 'Protect your valuable livestock and support your farming and dairy business.',
+    intro:
+      'For farmers and dairy owners, livestock is a livelihood. Livestock insurance helps protect against the financial loss of eligible animals due to covered risks.',
+    items: [
+      'Cow Insurance',
+      'Buffalo Insurance',
+      'Cattle Insurance',
+      'Dairy Animal Insurance',
+      'Livestock Protection Plans',
+    ],
+  },
+  {
+    slug: 'commercial-vehicle-insurance',
+    num: '07',
+    title: 'Commercial Vehicle Insurance',
+    seo: 'Commercial Vehicle Insurance in Lucknow',
+    icon: Truck,
+    short: 'Keep your business moving with cover for trucks, buses, taxis and fleets.',
+    items: [
+      'Commercial Truck Insurance',
+      'Bus & Passenger Vehicle Insurance',
+      'Taxi & Cab Insurance',
+      'Goods Carrying Vehicle Insurance',
+      'Pickup & Delivery Van Insurance',
+      'School Bus Insurance',
+      'Tempo & Mini Truck Insurance',
+      'Tractor & Agricultural Commercial Vehicle Insurance',
+      'Third-Party Commercial Vehicle Insurance',
+      'Comprehensive Commercial Vehicle Insurance',
+      'Commercial Vehicle Policy Renewal',
+      'Fleet Insurance Solutions',
+    ],
+  },
+];
+
+export const getService = (slug) => SERVICES.find((s) => s.slug === slug);
