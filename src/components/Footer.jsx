@@ -66,6 +66,11 @@ export default function Footer() {
             <Link to="/disclaimer">Disclaimer</Link>
           </span>
         </div>
+        <div className="container powered-by">
+          <span>Powered by</span>
+          <img src="/upgrate-logo.png" alt="Upgrate" />
+          {/* <span>Upgrate Infotech</span> */}
+        </div>
       </div>
     </footer>
   );

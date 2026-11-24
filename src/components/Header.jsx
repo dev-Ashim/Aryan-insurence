@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react';
 import { SITE } from '../data/site.js';
@@ -8,8 +8,35 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
+  const headerRef = useRef(null);
 
   useEffect(() => setOpen(false), [pathname]);
+
+  // Keep a CSS variable with the real header height so the mobile menu sits right below it
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const setH = () => document.documentElement.style.setProperty('--header-h', `${el.offsetHeight}px`);
+    setH();
+    const ro = new ResizeObserver(setH);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  // Lock page scroll while the mobile menu is open; close on Escape or when resizing to desktop
+  useEffect(() => {
+    document.documentElement.classList.toggle('menu-open', open);
+    if (!open) return;
+    const onKey = (e) => e.key === 'Escape' && setOpen(false);
+    const onResize = () => window.innerWidth > 1080 && setOpen(false);
+    window.addEventListener('keydown', onKey);
+    window.addEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      window.removeEventListener('resize', onResize);
+      document.documentElement.classList.remove('menu-open');
+    };
+  }, [open]);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', onScroll);
@@ -17,7 +44,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
+    <header ref={headerRef} className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="topbar">
         <div className="container topbar-inner">
           <span className="hindi">{SITE.hindiTagline}</span>
@@ -29,11 +56,7 @@ export default function Header() {
       </div>
       <div className="container nav-inner">
         <Link to="/" className="brand" aria-label="Aryan Insurance Consultant home">
-          <img src="/logo-icon.jpg" alt="" />
-          <span>
-            <strong>ARYAN</strong>
-            <small>Insurances Consultant</small>
-          </span>
+          <img src="/logo-header.png" alt="Aryan Insurances Consultant" width="640" height="255" />
         </Link>
 
         <nav className={`nav ${open ? 'open' : ''}`} data-lenis-prevent>
@@ -55,7 +78,7 @@ export default function Header() {
           <Link to="/contact" className="btn btn-red nav-cta">Free Consultation</Link>
         </nav>
 
-        <button className="menu-toggle" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+        <button className="menu-toggle" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>
           {open ? <X /> : <Menu />}
         </button>
       </div>

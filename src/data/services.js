@@ -3,6 +3,9 @@ import { Car, HeartPulse, ShieldCheck, Store, Activity, Beef, Truck } from 'luci
 export const SERVICES = [
   {
     slug: 'motor-insurance',
+    img: '/images/car.jpg',
+    img2: '/images/bike.jpg',
+    badge: 'Cashless Garages',
     num: '01',
     title: 'Motor Insurance',
     seo: 'Car & Motor Insurance Consultant in Lucknow',
@@ -21,6 +24,9 @@ export const SERVICES = [
   },
   {
     slug: 'health-insurance',
+    img: '/images/health.jpg',
+    img2: '/images/family.jpg',
+    badge: 'Cashless Hospitals',
     num: '02',
     title: 'Health Insurance',
     seo: 'Health Insurance Plans & Consultation',
@@ -39,6 +45,9 @@ export const SERVICES = [
   },
   {
     slug: 'life-term-insurance',
+    img: '/images/term.jpg',
+    img2: '/images/child.jpg',
+    badge: 'Family Protection',
     num: '03',
     title: 'Life & Term Insurance',
     seo: 'Life & Term Insurance Consultant',
@@ -57,6 +66,9 @@ export const SERVICES = [
   },
   {
     slug: 'shop-business-insurance',
+    img: '/images/shop.jpg',
+    img2: '/images/fire.jpg',
+    badge: 'Business Cover',
     num: '04',
     title: 'Shop & Business Insurance',
     seo: 'Shop & Business Insurance Services',
@@ -75,6 +87,9 @@ export const SERVICES = [
   },
   {
     slug: 'personal-accident-insurance',
+    img: '/images/accident.jpg',
+    img2: '/images/health.jpg',
+    badge: '24x7 Protection',
     num: '05',
     title: 'Personal Accident Insurance',
     seo: 'Personal Accident Insurance',
@@ -92,6 +107,8 @@ export const SERVICES = [
   },
   {
     slug: 'livestock-insurance',
+    img: '/images/cow.jpg',
+    badge: 'For Farmers',
     num: '06',
     title: 'Livestock Insurance',
     seo: 'Cattle & Livestock Insurance',
@@ -109,6 +126,9 @@ export const SERVICES = [
   },
   {
     slug: 'commercial-vehicle-insurance',
+    img: '/images/fleet.jpg',
+    img2: '/images/truck.jpg',
+    badge: 'Fleet Plans',
     num: '07',
     title: 'Commercial Vehicle Insurance',
     seo: 'Commercial Vehicle Insurance in Lucknow',

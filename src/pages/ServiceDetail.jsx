@@ -16,11 +16,18 @@ export default function ServiceDetail() {
 
   return (
     <>
-      <PageHero title={service.title} subtitle={service.short} crumb={<><Link to="/services">Services</Link> <span>/</span> {service.title}</>} />
+      <PageHero title={service.title} subtitle={service.short} image={service.img} crumb={<><Link to="/services">Services</Link> <span>/</span> {service.title}</>} />
       <section className="section">
         <div className="container detail-grid">
           <article>
-            <div className="detail-icon"><Icon size={34} /></div>
+            <div className="svc-visual">
+              <div className="svc-photo">
+                <img src={service.img} alt={service.title} />
+              </div>
+              {service.img2 && <img src={service.img2} alt="" className="svc-inset" loading="lazy" />}
+              {service.badge && <span className="fleet-chip svc-chip"><span className="live-dot" /> {service.badge}</span>}
+              <div className="svc-icon"><Icon size={30} /></div>
+            </div>
             <h2>{service.title}</h2>
             <p className="lead">{service.intro}</p>
             <h3>What We Can Help You With</h3>

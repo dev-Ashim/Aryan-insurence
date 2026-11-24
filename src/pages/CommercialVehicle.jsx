@@ -39,6 +39,7 @@ export default function CommercialVehicle() {
       <PageHero
         title="Commercial Vehicle Insurance"
         subtitle="Protection for your business on every journey."
+        image="/images/truck.jpg"
         crumb={<><Link to="/services">Services</Link> <span>/</span> Commercial Vehicle Insurance</>}
       />
       <section className="section">
@@ -59,11 +60,20 @@ export default function CommercialVehicle() {
               Get Commercial Vehicle Insurance Quote <ArrowRight size={18} />
             </a>
           </div>
-          <div className="feature-panel truck">
-            <div className="feature-panel-inner">
-              <Truck size={56} />
+          <div className="fleet-visual">
+            <div className="fleet-photo">
+              <img src="/images/fleet.jpg" alt="Truck driving on a mountain highway" loading="lazy" />
+            </div>
+            <img src="/images/truck.jpg" alt="Commercial truck on the road" className="fleet-inset" loading="lazy" />
+            <span className="fleet-chip"><span className="live-dot" /> Fleet Plans Available</span>
+            <div className="fleet-card">
               <h3>Single Vehicle or Full Fleet</h3>
-              <p>Trucks · Buses · Taxis · Vans · Tempos · Tractors</p>
+              <div className="fleet-tags">
+                {['Trucks', 'Buses', 'Taxis', 'Vans', 'Tempos', 'Tractors'].map((t) => <span key={t}>{t}</span>)}
+              </div>
+              <div className="fleet-road" aria-hidden="true">
+                <Truck size={26} className="fleet-road-truck" />
+              </div>
             </div>
           </div>
         </div>

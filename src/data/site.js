@@ -4,8 +4,8 @@ export const SITE = {
   hindiTagline: 'सुरक्षा का वादा, आपका भरोसा!',
   person: 'Aryan Singh',
   role: 'Insurance Consultant & Director',
-  phones: ['+91 82997 29020', '+91 95066 88867'],
-  phoneLinks: ['+918299729020', '+919506688867'],
+  phones: ['+91 82997 29020', '+91 87951 69140'],
+  phoneLinks: ['+918299729020', '+918795169140'],
   whatsapp: '918299729020',
   email: 'info@aryaninsurance.com',
   addressLines: [
@@ -14,7 +14,45 @@ export const SITE = {
     'Lucknow, Uttar Pradesh, India – 226030',
   ],
   mapQuery: 'Skyline Plaza 3, Sushant Golf City, Lucknow 226030',
+  // Google business profile (reviews panel)
+  googleReviewsUrl: 'https://www.google.com/search?q=Aryan+Insurance+Consultant&kgmid=/g/11nfqn8t8s',
 };
+
+// Client reviews copied word-for-word from the Google Maps listing.
+// Format: { name: 'Client Name', rating: 5, text: 'Review text…', note?: 'Translated from Hindi' }
+export const TESTIMONIALS = [
+  {
+    name: 'Arun Tiwari',
+    rating: 5,
+    text: 'I got my health insurance from them, they provide excellent service. My Tata Punch claim was processed very easily and timely. Best car and health insurance in Lucknow. Recommended from My Side',
+    note: 'Translated from Hindi',
+  },
+  {
+    name: 'Anshika Singh',
+    rating: 5,
+    text: 'The company offers excellent services with smooth and hassle-free processes. Special mention to Aryan Singh—he is sweet, supportive, and always pleasant to interact with.',
+  },
+  {
+    name: 'Jyoti Singh',
+    rating: 5,
+    text: 'Good service and best insurance policy for car. I got claim through qcs within 3 days at my bank account superb service.',
+  },
+  {
+    name: 'Abhishek Tiwari',
+    rating: 5,
+    text: 'Best Health insurance claim settlement. Quick Approval of claim and supportive team.',
+  },
+  {
+    name: 'Dileep Kashyap',
+    rating: 5,
+    text: 'Very loyal person. Great 👍 job brother. Timely reminding for renewal policy.',
+  },
+  {
+    name: 'Saurabh Srivastava',
+    rating: 5,
+    text: 'Best insurance agency in Lucknow. Best car insurance in Lucknow. Best health insurance in Lucknow. Ower all Good support.',
+  },
+];
 
 export const whatsappLink = (text = 'Hello Aryan Insurance Consultant, I would like insurance guidance.') =>
   `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(text)}`;

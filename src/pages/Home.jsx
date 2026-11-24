@@ -1,15 +1,19 @@
 import { Link } from 'react-router-dom';
 import {
   ArrowRight, CheckCircle2, UserCheck, Layers, FileCheck, BellRing, LifeBuoy, Award,
-  Users, HeartHandshake, Truck, Phone,
+  Users, HeartHandshake, Truck, ShieldCheck,
 } from 'lucide-react';
 import usePageTitle from '../components/usePageTitle.js';
 import ServiceCard from '../components/ServiceCard.jsx';
 import Process from '../components/Process.jsx';
 import Faq from '../components/Faq.jsx';
 import CtaBand from '../components/CtaBand.jsx';
+import HeroSlider from '../components/HeroSlider.jsx';
+import ProductGrid from '../components/ProductGrid.jsx';
+import Testimonials from '../components/Testimonials.jsx';
+import StackCards from '../components/StackCards.jsx';
 import { SERVICES } from '../data/services.js';
-import { SITE, FAQS } from '../data/site.js';
+import { FAQS } from '../data/site.js';
 
 const WHY = [
   { icon: Award, t: 'Expert Insurance Guidance', d: 'Clear, honest advice to help you understand every option.' },
@@ -34,40 +38,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero">
-        <div className="hero-shape" aria-hidden="true" />
-        <div className="container hero-grid">
-          <div className="hero-text">
-            <span className="eyebrow light">{SITE.tagline}</span>
-            <h1>
-              Insurance Solutions for <span className="accent">Every Stage</span> of Life
-            </h1>
-            <p className="hindi-lg">{SITE.hindiTagline}</p>
-            <p>
-              Protect your family, health, vehicles, business and valuable assets with the right insurance coverage.
-              At Aryan Insurance Consultant, we help you understand, compare and choose insurance solutions
-              according to your needs and budget.
-            </p>
-            <ul className="hero-points">
-              <li><CheckCircle2 size={18} /> Personalized Insurance Guidance</li>
-              <li><CheckCircle2 size={18} /> Multiple Insurance Solutions</li>
-              <li><CheckCircle2 size={18} /> Easy Policy Assistance</li>
-              <li><CheckCircle2 size={18} /> Renewal & Claim Support</li>
-            </ul>
-            <div className="hero-actions">
-              <Link to="/contact" className="btn btn-red">Get a Free Consultation <ArrowRight size={18} /></Link>
-              <Link to="/services" className="btn btn-outline-white">Explore Our Services</Link>
-            </div>
-          </div>
-          <div className="hero-card">
-            <img src="/logo-icon.jpg" alt="Aryan Insurance Consultant shield logo" className="hero-logo" />
-            <h3>Talk to an Insurance Expert</h3>
-            <p>{SITE.person}<br /><small>{SITE.role}</small></p>
-            <a href={`tel:${SITE.phoneLinks[0]}`} className="btn btn-navy btn-block"><Phone size={18} /> {SITE.phones[0]}</a>
-            <a href={`tel:${SITE.phoneLinks[1]}`} className="btn btn-ghost btn-block"><Phone size={18} /> {SITE.phones[1]}</a>
-          </div>
-        </div>
-      </section>
+      <HeroSlider />
 
       <section className="stats">
         <div className="container stats-grid">
@@ -75,6 +46,17 @@ export default function Home() {
           <div><Users size={22} /><span>Individuals & Families</span></div>
           <div><Truck size={22} /><span>Vehicles & Fleets</span></div>
           <div><HeartHandshake size={22} /><span>Renewal & Claim Support</span></div>
+        </div>
+      </section>
+
+      <StackCards>
+      <section className="section section-products">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Choose Your Cover</span>
+            <h2>What Would You Like to Insure?</h2>
+          </div>
+          <ProductGrid />
         </div>
       </section>
 
@@ -130,12 +112,22 @@ export default function Home() {
             </ul>
             <Link to="/about" className="btn btn-navy">About Us <ArrowRight size={18} /></Link>
           </div>
-          <div className="feature-panel">
-            <div className="feature-panel-inner">
-              <h3>Commercial Vehicle Insurance</h3>
-              <p>Trucks, buses, taxis, school buses, pickup vans, tempos, tractors and full fleets — protection for your business on every journey.</p>
-              <Link to="/services/commercial-vehicle-insurance" className="btn btn-red">Get a Quote <ArrowRight size={18} /></Link>
+          <div className="matters-visual">
+            <img src="/images/matters.jpg" alt="A family walking together on the beach" className="matters-photo" loading="lazy" />
+            <div className="matters-badge">
+              <img src="/logo-icon.jpg" alt="Aryan Insurance Consultant logo" />
+              <div><strong>Trusted Advisor</strong><small>Lucknow, Uttar Pradesh</small></div>
             </div>
+            <div className="matters-chip"><ShieldCheck size={16} /> Health · Motor · Life · Business</div>
+            <Link to="/services/commercial-vehicle-insurance" className="matters-card">
+              <img src="/images/fleet.jpg" alt="Truck on a highway" loading="lazy" />
+              <div>
+                <span className="matters-card-tag"><Truck size={14} /> Commercial Vehicle</span>
+                <h3>Keep your fleet moving</h3>
+                <p>Trucks, buses, taxis, tempos, tractors and full fleets.</p>
+                <span className="matters-card-link">Get a Quote <ArrowRight size={16} /></span>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -151,6 +143,17 @@ export default function Home() {
       </section>
 
       <section className="section">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Testimonials</span>
+            <h2>What Our Clients Say</h2>
+            <p>Real feedback from our clients on Google.</p>
+          </div>
+          <Testimonials />
+        </div>
+      </section>
+
+      <section className="section section-alt">
         <div className="container narrow">
           <div className="section-head">
             <span className="eyebrow">FAQs</span>
@@ -160,6 +163,8 @@ export default function Home() {
           <div className="center mt"><Link to="/faqs" className="btn btn-ghost">View All FAQs</Link></div>
         </div>
       </section>
+
+      </StackCards>
 
       <CtaBand />
     </>
