@@ -64,7 +64,9 @@ export default function Footer() {
         </div>
         <div className="container powered-by">
           <span>Powered by</span>
-          <img src="/upgrate-logo.png" alt="Upgrate" />
+          <a href="https://upgrate.in/" target="_blank" rel="noopener noreferrer">
+            <img src="/upgrate-logo.png" alt="Upgrate" />
+          </a>
           {/* <span>Upgrate Infotech</span> */}
         </div>
       </div>
