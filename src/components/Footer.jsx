@@ -8,11 +8,7 @@ export default function Footer() {
       <div className="container footer-grid">
         <div>
           <div className="footer-brand">
-            <img src="/logo-icon.jpg" alt="" />
-            <div>
-              <strong>ARYAN</strong>
-              <small>Insurances Consultant</small>
-            </div>
+            <img src="/logo-footer.png" alt="Aryan Insurances Consultant" width="900" height="352" />
           </div>
           <p>Your Trusted Partner for Insurance Solutions.</p>
           <p className="muted">
